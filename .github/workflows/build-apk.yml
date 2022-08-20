@@ -52,8 +52,14 @@ jobs:
           name: app-dev
           path: /home/runner/work/ionic-ghab/ionic-ghab/android/app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Upload release bundle
+      - name: Upload debug bundle
         uses: actions/upload-artifact@v3
         with:
           name: app-release
           path: /home/runner/work/ionic-ghab/ionic-ghab/android/app/build/outputs/bundle/debug/app-debug.aab
+
+      - name: Upload release bundle
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release
+          path: /home/runner/work/ionic-ghab/ionic-ghab/android/app/build/outputs/bundle/release/app-debug.aab
