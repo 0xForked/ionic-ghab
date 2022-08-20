@@ -1,0 +1,7 @@
+{
+  "name": "ionic-ghab",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
