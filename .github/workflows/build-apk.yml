@@ -45,15 +45,15 @@ jobs:
 
       - name: Check PWD
         run: pwd
-        
+
       - name: Upload dev APK
         uses: actions/upload-artifact@v3
         with:
           name: app-dev
-          path: /app/build/outputs/apk/debug/app-debug.apk
+          path: /android/app/build/outputs/apk/debug/app-debug.apk
 
-      # - name: Upload release bundle
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: app-release
-      #     path: apk/app.aab
+      - name: Upload release bundle
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release
+          path: /android/app/build/outputs/bundle/debug/app-debug.aab
