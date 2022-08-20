@@ -39,6 +39,10 @@ jobs:
       - name: Build Android Release APK
         run: ionic capacitor build android --release --prod
 
+      - name: Generate the Android APK Debug
+        working-directory: ./android/
+        run: ./gradlew assembleDebug  
+
       - name: Generate the Android App Bundle
         working-directory: ./android/
         run: ./gradlew bundle
@@ -53,6 +57,7 @@ jobs:
         with:
           tag_name: ${{steps.previous_tag.outputs.tag}}
           files: |
+            /home/runner/work/ionic-ghab/ionic-ghab/android/app/build/outputs/apk/debug/app-debug.apk
             /home/runner/work/ionic-ghab/ionic-ghab/android/app/build/outputs/bundle/debug/app-debug.aab
             /home/runner/work/ionic-ghab/ionic-ghab/android/app/build/outputs/bundle/release/app-release.aab
 
